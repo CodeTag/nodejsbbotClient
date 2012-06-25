@@ -4,7 +4,7 @@ var playerNode = require('./playernode.js');
 var bot = playerNode.newPlayer();
 
 var client = net.connect(5000, function() { 
-  console.log('client connected');
+  console.log('bot connected');
   client.write('agares,10101\r\n');
 });
 
@@ -33,5 +33,5 @@ client.on('data', function(data) {
 });
 
 client.on('end', function() {
-  console.log('client disconnected');
+  console.log('bot disconnected');
 });
