@@ -28,7 +28,7 @@ exports.newPlayer = function(){
       return false;
     },
     scanFree:function(x, y){
-      return this.map[y][x]=='_';
+      return this.map[y][x]=='_'||this.map[y][x]=='V'||this.map[y][x]=='P';
     },
     move:function(){
       //scan freeCell
