@@ -3,9 +3,11 @@ var net = require('net');
 var playerNode = require('./playernode.js');
 var bot = playerNode.newPlayer();
 
-var client = net.connect(5000, function() { 
+var client = net.connect(5000,"bomberbot.com", function() { 
   console.log('bot connected');
-  client.write('agares,10101\r\n');
+  var user="";//escribe tu nombre de usuario aca
+  var token="";//escribe tu token de autenticacion de bomberbot.com
+  client.write(user+","+token+"\r\n");
 });
 
 client.on('data', function(data) {
