@@ -1,13 +1,13 @@
-
+// print process.argv
 var net = require('net');
 var playerNode = require('./playernode.js');
 var bot = playerNode.newPlayer();
 
-var client = net.connect(5000,"bomberbot.com", function() { 
+var client = net.connect(5000,"localhost", function() { 
   console.log('bot connected');
-  var user="";//escribe tu nombre de usuario aca
-  var token="";//escribe tu token de autenticacion de bomberbot.com
-  client.write(user+","+token+"\r\n");
+  var user="kuryaki";//escribe tu nombre de usuario aca
+  var token="4fe8eb278a1094896a000003";//escribe tu token de autenticacion de bomberbot.com
+  client.write(process.argv[2]+","+process.argv[3]+"\r\n");
 });
 
 client.on('data', function(data) {
